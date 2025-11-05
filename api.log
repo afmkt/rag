@@ -1,0 +1,899 @@
+2025-11-04 19:12:44,987 INFO Use pytorch device_name: cpu
+2025-11-04 19:12:44,987 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-04 23:52:38,502 INFO Use pytorch device_name: cpu
+2025-11-04 23:52:38,502 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-04 23:57:07,276 INFO Use pytorch device_name: cpu
+2025-11-04 23:57:07,277 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 00:06:13,265 INFO Use pytorch device_name: cpu
+2025-11-05 00:06:13,265 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 08:30:57,145 INFO Use pytorch device_name: mps
+2025-11-05 08:30:57,145 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 08:37:54,749 ERROR middle.py failed: Traceback (most recent call last):
+  File "/Users/michael/code/python/agno/middle.py", line 327, in <module>
+    main()
+  File "/Users/michael/code/python/agno/middle.py", line 305, in main
+    result = process_document(docx_file)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 249, in process_document
+    json_result = extract_semantic_json(piece['content'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 165, in extract_semantic_json
+    response = llm.invoke(prompt)
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/openrouter_llm.py", line 20, in invoke
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 208, in connect_tcp
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/.local/share/uv/python/cpython-3.12.6-macos-aarch64-none/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+
+2025-11-05 08:40:33,093 INFO Use pytorch device_name: mps
+2025-11-05 08:40:33,093 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 08:41:29,638 INFO Starting upload of file: middle.docx
+2025-11-05 08:41:29,639 INFO Saving file to: data/middle.docx
+2025-11-05 08:41:29,639 INFO File saved successfully, size: 67848 bytes
+2025-11-05 08:41:29,639 INFO Starting middle.py processing script
+2025-11-05 08:44:26,428 ERROR middle.py failed with return code: -2
+2025-11-05 08:44:26,428 ERROR Upload failed with error: middle.py failed: Traceback (most recent call last):
+  File "/Users/michael/code/python/agno/middle.py", line 327, in <module>
+    main()
+  File "/Users/michael/code/python/agno/middle.py", line 305, in main
+    result = process_document(docx_file)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 249, in process_document
+    json_result = extract_semantic_json(piece['content'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 165, in extract_semantic_json
+    response = llm.invoke(prompt)
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/openrouter_llm.py", line 20, in invoke
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 928, in send
+    raise exc
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 922, in send
+    response.read()
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_models.py", line 881, in read
+    self._content = b"".join(self.iter_bytes())
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+                ^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/.local/share/uv/python/cpython-3.12.6-macos-aarch64-none/lib/python3.12/ssl.py", line 1232, in recv
+    return self.read(buflen)
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/michael/.local/share/uv/python/cpython-3.12.6-macos-aarch64-none/lib/python3.12/ssl.py", line 1105, in read
+    return self._sslobj.read(len)
+           ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+2025-11-05 08:46:25,597 INFO Use pytorch device_name: mps
+2025-11-05 08:46:25,597 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 08:47:15,069 INFO Starting upload of file: middle.docx
+2025-11-05 08:47:15,070 INFO Saving file to: data/middle.docx
+2025-11-05 08:47:15,070 INFO File saved successfully, size: 67848 bytes
+2025-11-05 08:47:15,070 INFO Starting middle.py processing script
+2025-11-05 09:02:29,675 ERROR middle.py failed with return code: -2
+2025-11-05 09:02:29,675 ERROR Upload failed with error: middle.py failed: Traceback (most recent call last):
+  File "/Users/michael/code/python/agno/middle.py", line 327, in <module>
+    main()
+  File "/Users/michael/code/python/agno/middle.py", line 305, in main
+    result = process_document(docx_file)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 249, in process_document
+    json_result = extract_semantic_json(piece['content'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/middle.py", line 165, in extract_semantic_json
+    response = llm.invoke(prompt)
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/openrouter_llm.py", line 20, in invoke
+    response = self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/code/python/agno/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 208, in connect_tcp
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/michael/.local/share/uv/python/cpython-3.12.6-macos-aarch64-none/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+
+2025-11-05 09:02:53,802 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 09:02:53,802 INFO Loading JSON data from: data/middle.json
+2025-11-05 09:02:53,803 INFO Processing 62 items for middle_docs
+2025-11-05 09:02:53,803 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 09:02:53,803 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 09:02:53,803 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 09:02:53,803 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 09:02:53,803 INFO Processing 12 sections for middle_docs item 5
+2025-11-05 09:02:53,803 INFO Processing 4 sections for middle_docs item 6
+2025-11-05 09:02:53,803 INFO Processing 5 sections for middle_docs item 7
+2025-11-05 09:02:53,803 INFO Processing 3 sections for middle_docs item 8
+2025-11-05 09:02:53,804 INFO Processing 5 sections for middle_docs item 9
+2025-11-05 09:02:53,804 INFO Processing 8 sections for middle_docs item 10
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 09:02:53,804 INFO Processing 9 sections for middle_docs item 12
+2025-11-05 09:02:53,804 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 09:02:53,804 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 09:02:53,804 INFO Processing 6 sections for middle_docs item 18
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 21
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 09:02:53,804 INFO Processing 2 sections for middle_docs item 23
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 24
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 25
+2025-11-05 09:02:53,804 INFO Processing 1 sections for middle_docs item 26
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 27
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 28
+2025-11-05 09:02:53,804 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 09:02:53,804 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 09:02:53,804 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 32
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 33
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 35
+2025-11-05 09:02:53,804 INFO Processing 7 sections for middle_docs item 36
+2025-11-05 09:02:53,804 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 09:02:53,804 INFO Processing 5 sections for middle_docs item 39
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 40
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 41
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 42
+2025-11-05 09:02:53,804 INFO Processing 8 sections for middle_docs item 43
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 44
+2025-11-05 09:02:53,804 INFO Processing 5 sections for middle_docs item 45
+2025-11-05 09:02:53,804 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 09:02:53,804 INFO Processing 3 sections for middle_docs item 47
+2025-11-05 09:02:53,804 INFO Processing 9 sections for middle_docs item 48
+2025-11-05 09:02:53,805 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 09:02:53,805 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 09:02:53,805 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 09:02:53,805 INFO Processing 5 sections for middle_docs item 52
+2025-11-05 09:02:53,805 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 09:02:53,805 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 09:02:53,805 INFO Processing 5 sections for middle_docs item 56
+2025-11-05 09:02:53,805 INFO Processing 1 sections for middle_docs item 57
+2025-11-05 09:02:53,805 INFO Processing 5 sections for middle_docs item 58
+2025-11-05 09:02:53,805 INFO Processing 8 sections for middle_docs item 60
+2025-11-05 09:02:53,805 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 09:02:53,805 INFO Processing 5 sections for middle_docs item 62
+2025-11-05 09:02:53,805 INFO Created 276 documents for collection: middle_docs
+2025-11-05 09:02:54,956 INFO Use pytorch device_name: mps
+2025-11-05 09:02:54,956 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:03:02,013 INFO Adding 276 documents to PGVector collection: middle_docs
+2025-11-05 09:03:02,674 INFO Successfully loaded 276 documents into PGVector collection: middle_docs
+2025-11-05 09:03:49,072 INFO Use pytorch device_name: mps
+2025-11-05 09:03:49,072 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:04:22,956 INFO Use pytorch device_name: mps
+2025-11-05 09:04:22,956 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:19:10,910 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 09:19:10,910 INFO Loading JSON data from: data/middle.json
+2025-11-05 09:19:10,912 INFO Processing 62 items for middle_docs
+2025-11-05 09:19:10,912 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 09:19:10,912 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 09:19:10,912 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 09:19:10,912 INFO Processing 11 sections for middle_docs item 5
+2025-11-05 09:19:10,912 INFO Processing 11 sections for middle_docs item 6
+2025-11-05 09:19:10,912 INFO Processing 9 sections for middle_docs item 7
+2025-11-05 09:19:10,912 INFO Processing 3 sections for middle_docs item 8
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 09:19:10,912 INFO Processing 1 sections for middle_docs item 10
+2025-11-05 09:19:10,912 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 09:19:10,912 INFO Processing 8 sections for middle_docs item 12
+2025-11-05 09:19:10,912 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 09:19:10,912 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 09:19:10,912 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 09:19:10,912 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 09:19:10,912 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 09:19:10,912 INFO Processing 6 sections for middle_docs item 18
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 09:19:10,912 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 21
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 09:19:10,912 INFO Processing 2 sections for middle_docs item 23
+2025-11-05 09:19:10,912 INFO Processing 8 sections for middle_docs item 24
+2025-11-05 09:19:10,912 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 09:19:10,912 INFO Processing 3 sections for middle_docs item 26
+2025-11-05 09:19:10,912 INFO Processing 4 sections for middle_docs item 27
+2025-11-05 09:19:10,913 INFO Processing 7 sections for middle_docs item 28
+2025-11-05 09:19:10,913 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 09:19:10,913 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 32
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 09:19:10,913 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 09:19:10,913 INFO Processing 25 sections for middle_docs item 35
+2025-11-05 09:19:10,913 INFO Processing 8 sections for middle_docs item 36
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 09:19:10,913 INFO Processing 4 sections for middle_docs item 40
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 41
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 42
+2025-11-05 09:19:10,913 INFO Processing 6 sections for middle_docs item 43
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 09:19:10,913 INFO Processing 9 sections for middle_docs item 45
+2025-11-05 09:19:10,913 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 47
+2025-11-05 09:19:10,913 INFO Processing 8 sections for middle_docs item 48
+2025-11-05 09:19:10,913 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 09:19:10,913 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 09:19:10,913 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 09:19:10,913 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 09:19:10,913 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 55
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 56
+2025-11-05 09:19:10,913 INFO Processing 1 sections for middle_docs item 57
+2025-11-05 09:19:10,913 INFO Processing 5 sections for middle_docs item 58
+2025-11-05 09:19:10,913 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 09:19:10,913 INFO Processing 21 sections for middle_docs item 60
+2025-11-05 09:19:10,913 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 09:19:10,914 INFO Processing 2 sections for middle_docs item 62
+2025-11-05 09:19:10,914 INFO Created 305 documents for collection: middle_docs
+2025-11-05 09:19:12,071 INFO Use pytorch device_name: mps
+2025-11-05 09:19:12,071 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:19:20,820 INFO Adding 305 documents to PGVector collection: middle_docs
+2025-11-05 09:19:22,367 INFO Successfully loaded 305 documents into PGVector collection: middle_docs
+2025-11-05 09:19:36,777 INFO Use pytorch device_name: mps
+2025-11-05 09:19:36,777 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:19:37,382 INFO Starting upload of file: middle.docx
+2025-11-05 09:19:37,382 INFO Saving file to: data/middle.docx
+2025-11-05 09:19:37,383 INFO File saved successfully, size: 67848 bytes
+2025-11-05 09:19:37,383 INFO Starting middle.py processing script
+2025-11-05 09:20:01,155 INFO Use pytorch device_name: mps
+2025-11-05 09:20:01,155 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:22:54,033 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 09:22:54,033 INFO Loading JSON data from: data/middle.json
+2025-11-05 09:22:54,034 INFO Processing 62 items for middle_docs
+2025-11-05 09:22:54,034 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 09:22:54,034 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 09:22:54,034 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 09:22:54,034 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 09:22:54,034 INFO Processing 11 sections for middle_docs item 5
+2025-11-05 09:22:54,034 INFO Processing 11 sections for middle_docs item 6
+2025-11-05 09:22:54,034 INFO Processing 9 sections for middle_docs item 7
+2025-11-05 09:22:54,034 INFO Processing 3 sections for middle_docs item 8
+2025-11-05 09:22:54,034 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 09:22:54,034 INFO Processing 1 sections for middle_docs item 10
+2025-11-05 09:22:54,034 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 09:22:54,034 INFO Processing 8 sections for middle_docs item 12
+2025-11-05 09:22:54,034 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 09:22:54,034 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 09:22:54,034 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 09:22:54,034 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 09:22:54,034 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 09:22:54,034 INFO Processing 6 sections for middle_docs item 18
+2025-11-05 09:22:54,034 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 09:22:54,034 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 09:22:54,034 INFO Processing 4 sections for middle_docs item 21
+2025-11-05 09:22:54,034 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 23
+2025-11-05 09:22:54,035 INFO Processing 8 sections for middle_docs item 24
+2025-11-05 09:22:54,035 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 26
+2025-11-05 09:22:54,035 INFO Processing 4 sections for middle_docs item 27
+2025-11-05 09:22:54,035 INFO Processing 7 sections for middle_docs item 28
+2025-11-05 09:22:54,035 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 09:22:54,035 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 32
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 09:22:54,035 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 09:22:54,035 INFO Processing 25 sections for middle_docs item 35
+2025-11-05 09:22:54,035 INFO Processing 8 sections for middle_docs item 36
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 09:22:54,035 INFO Processing 4 sections for middle_docs item 40
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 41
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 42
+2025-11-05 09:22:54,035 INFO Processing 6 sections for middle_docs item 43
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 09:22:54,035 INFO Processing 9 sections for middle_docs item 45
+2025-11-05 09:22:54,035 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 47
+2025-11-05 09:22:54,035 INFO Processing 8 sections for middle_docs item 48
+2025-11-05 09:22:54,035 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 09:22:54,035 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 09:22:54,035 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 09:22:54,035 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 55
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 56
+2025-11-05 09:22:54,035 INFO Processing 1 sections for middle_docs item 57
+2025-11-05 09:22:54,035 INFO Processing 5 sections for middle_docs item 58
+2025-11-05 09:22:54,035 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 09:22:54,035 INFO Processing 21 sections for middle_docs item 60
+2025-11-05 09:22:54,035 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 09:22:54,035 INFO Processing 2 sections for middle_docs item 62
+2025-11-05 09:22:54,035 INFO Created 305 documents for collection: middle_docs
+2025-11-05 09:22:55,244 INFO Use pytorch device_name: mps
+2025-11-05 09:22:55,244 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:22:59,143 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 09:22:59,143 INFO Loading JSON data from: data/middle.json
+2025-11-05 09:22:59,144 INFO Processing 62 items for middle_docs
+2025-11-05 09:22:59,144 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 09:22:59,144 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 09:22:59,145 INFO Processing 11 sections for middle_docs item 5
+2025-11-05 09:22:59,145 INFO Processing 11 sections for middle_docs item 6
+2025-11-05 09:22:59,145 INFO Processing 9 sections for middle_docs item 7
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 8
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 09:22:59,145 INFO Processing 1 sections for middle_docs item 10
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 09:22:59,145 INFO Processing 8 sections for middle_docs item 12
+2025-11-05 09:22:59,145 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 09:22:59,145 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 09:22:59,145 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 09:22:59,145 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 09:22:59,145 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 09:22:59,145 INFO Processing 6 sections for middle_docs item 18
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 21
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 09:22:59,145 INFO Processing 2 sections for middle_docs item 23
+2025-11-05 09:22:59,145 INFO Processing 8 sections for middle_docs item 24
+2025-11-05 09:22:59,145 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 26
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 27
+2025-11-05 09:22:59,145 INFO Processing 7 sections for middle_docs item 28
+2025-11-05 09:22:59,145 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 09:22:59,145 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 09:22:59,145 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 09:22:59,145 INFO Processing 2 sections for middle_docs item 32
+2025-11-05 09:22:59,145 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 09:22:59,145 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 09:22:59,145 INFO Processing 25 sections for middle_docs item 35
+2025-11-05 09:22:59,146 INFO Processing 8 sections for middle_docs item 36
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 09:22:59,146 INFO Processing 4 sections for middle_docs item 40
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 41
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 42
+2025-11-05 09:22:59,146 INFO Processing 6 sections for middle_docs item 43
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 09:22:59,146 INFO Processing 9 sections for middle_docs item 45
+2025-11-05 09:22:59,146 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 47
+2025-11-05 09:22:59,146 INFO Processing 8 sections for middle_docs item 48
+2025-11-05 09:22:59,146 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 09:22:59,146 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 09:22:59,146 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 09:22:59,146 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 55
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 56
+2025-11-05 09:22:59,146 INFO Processing 1 sections for middle_docs item 57
+2025-11-05 09:22:59,146 INFO Processing 5 sections for middle_docs item 58
+2025-11-05 09:22:59,146 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 09:22:59,146 INFO Processing 21 sections for middle_docs item 60
+2025-11-05 09:22:59,146 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 09:22:59,146 INFO Processing 2 sections for middle_docs item 62
+2025-11-05 09:22:59,146 INFO Created 305 documents for collection: middle_docs
+2025-11-05 09:23:00,289 INFO Use pytorch device_name: mps
+2025-11-05 09:23:00,289 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 01:38:50,613 INFO Use pytorch device_name: cpu
+2025-11-05 01:38:50,613 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 01:42:00,963 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:42:01,578 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:42:02,197 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:42:03,250 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:42:03,832 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 09:46:53,132 INFO Use pytorch device_name: mps
+2025-11-05 09:46:53,132 INFO Use pytorch device_name: mps
+2025-11-05 09:46:53,132 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:46:53,132 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:47:12,841 INFO Use pytorch device_name: mps
+2025-11-05 09:47:12,841 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:47:26,185 INFO Use pytorch device_name: mps
+2025-11-05 09:47:26,185 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 09:47:27,598 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 09:47:27,598 INFO Loading JSON data from: data/middle.json
+2025-11-05 09:47:27,599 INFO Processing 62 items for middle_docs
+2025-11-05 09:47:27,599 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 09:47:27,599 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 09:47:27,599 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 09:47:27,599 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 09:47:27,599 INFO Processing 12 sections for middle_docs item 5
+2025-11-05 09:47:27,599 INFO Processing 12 sections for middle_docs item 6
+2025-11-05 09:47:27,599 INFO Processing 6 sections for middle_docs item 7
+2025-11-05 09:47:27,599 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 09:47:27,599 INFO Processing 8 sections for middle_docs item 10
+2025-11-05 09:47:27,599 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 09:47:27,599 INFO Processing 9 sections for middle_docs item 12
+2025-11-05 09:47:27,599 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 09:47:27,599 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 09:47:27,599 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 09:47:27,599 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 09:47:27,599 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 09:47:27,599 INFO Processing 3 sections for middle_docs item 18
+2025-11-05 09:47:27,600 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 21
+2025-11-05 09:47:27,600 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 09:47:27,600 INFO Processing 4 sections for middle_docs item 23
+2025-11-05 09:47:27,600 INFO Processing 7 sections for middle_docs item 24
+2025-11-05 09:47:27,600 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 26
+2025-11-05 09:47:27,600 INFO Processing 5 sections for middle_docs item 27
+2025-11-05 09:47:27,600 INFO Processing 6 sections for middle_docs item 28
+2025-11-05 09:47:27,600 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 09:47:27,600 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 32
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 09:47:27,600 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 09:47:27,600 INFO Processing 1 sections for middle_docs item 35
+2025-11-05 09:47:27,600 INFO Processing 6 sections for middle_docs item 36
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 09:47:27,600 INFO Processing 1 sections for middle_docs item 40
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 41
+2025-11-05 09:47:27,600 INFO Processing 3 sections for middle_docs item 42
+2025-11-05 09:47:27,600 INFO Processing 8 sections for middle_docs item 43
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 09:47:27,600 INFO Processing 6 sections for middle_docs item 45
+2025-11-05 09:47:27,600 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 47
+2025-11-05 09:47:27,600 INFO Processing 9 sections for middle_docs item 48
+2025-11-05 09:47:27,600 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 09:47:27,600 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 09:47:27,600 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 09:47:27,600 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 09:47:27,600 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 09:47:27,600 INFO Processing 6 sections for middle_docs item 55
+2025-11-05 09:47:27,601 INFO Processing 4 sections for middle_docs item 56
+2025-11-05 09:47:27,601 INFO Processing 3 sections for middle_docs item 57
+2025-11-05 09:47:27,601 INFO Processing 4 sections for middle_docs item 58
+2025-11-05 09:47:27,601 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 09:47:27,601 INFO Processing 6 sections for middle_docs item 60
+2025-11-05 09:47:27,601 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 09:47:27,601 INFO Processing 4 sections for middle_docs item 62
+2025-11-05 09:47:27,601 INFO Created 269 documents for collection: middle_docs
+2025-11-05 09:47:28,752 INFO Use pytorch device_name: mps
+2025-11-05 09:47:28,752 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 01:50:15,479 INFO Use pytorch device_name: cpu
+2025-11-05 01:50:15,480 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 01:51:31,822 INFO Loading JSON data into pgvector for collection: middle_docs
+2025-11-05 01:51:31,822 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 01:51:31,824 INFO Loading JSON data from: data/middle.json
+2025-11-05 01:51:31,827 INFO Processing 62 items for middle_docs
+2025-11-05 01:51:31,827 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 01:51:31,828 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 01:51:31,828 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 01:51:31,829 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 01:51:31,829 INFO Processing 12 sections for middle_docs item 5
+2025-11-05 01:51:31,830 INFO Processing 12 sections for middle_docs item 6
+2025-11-05 01:51:31,831 INFO Processing 6 sections for middle_docs item 7
+2025-11-05 01:51:31,831 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 01:51:31,832 INFO Processing 8 sections for middle_docs item 10
+2025-11-05 01:51:31,832 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 01:51:31,832 INFO Processing 9 sections for middle_docs item 12
+2025-11-05 01:51:31,833 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 01:51:31,833 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 01:51:31,834 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 01:51:31,834 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 01:51:31,834 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 01:51:31,835 INFO Processing 3 sections for middle_docs item 18
+2025-11-05 01:51:31,835 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 01:51:31,835 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 01:51:31,835 INFO Processing 2 sections for middle_docs item 21
+2025-11-05 01:51:31,835 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 01:51:31,836 INFO Processing 4 sections for middle_docs item 23
+2025-11-05 01:51:31,836 INFO Processing 7 sections for middle_docs item 24
+2025-11-05 01:51:31,836 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 01:51:31,836 INFO Processing 2 sections for middle_docs item 26
+2025-11-05 01:51:31,836 INFO Processing 5 sections for middle_docs item 27
+2025-11-05 01:51:31,837 INFO Processing 6 sections for middle_docs item 28
+2025-11-05 01:51:31,837 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 01:51:31,837 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 01:51:31,837 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 01:51:31,837 INFO Processing 3 sections for middle_docs item 32
+2025-11-05 01:51:31,838 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 01:51:31,838 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 01:51:31,838 INFO Processing 1 sections for middle_docs item 35
+2025-11-05 01:51:31,838 INFO Processing 6 sections for middle_docs item 36
+2025-11-05 01:51:31,838 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 01:51:31,838 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 01:51:31,839 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 01:51:31,839 INFO Processing 1 sections for middle_docs item 40
+2025-11-05 01:51:31,839 INFO Processing 3 sections for middle_docs item 41
+2025-11-05 01:51:31,839 INFO Processing 3 sections for middle_docs item 42
+2025-11-05 01:51:31,839 INFO Processing 8 sections for middle_docs item 43
+2025-11-05 01:51:31,840 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 01:51:31,840 INFO Processing 6 sections for middle_docs item 45
+2025-11-05 01:51:31,840 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 01:51:31,840 INFO Processing 2 sections for middle_docs item 47
+2025-11-05 01:51:31,841 INFO Processing 9 sections for middle_docs item 48
+2025-11-05 01:51:31,841 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 01:51:31,841 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 01:51:31,841 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 01:51:31,841 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 01:51:31,842 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 01:51:31,842 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 01:51:31,842 INFO Processing 6 sections for middle_docs item 55
+2025-11-05 01:51:31,842 INFO Processing 4 sections for middle_docs item 56
+2025-11-05 01:51:31,842 INFO Processing 3 sections for middle_docs item 57
+2025-11-05 01:51:31,843 INFO Processing 4 sections for middle_docs item 58
+2025-11-05 01:51:31,843 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 01:51:31,843 INFO Processing 6 sections for middle_docs item 60
+2025-11-05 01:51:31,843 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 01:51:31,844 INFO Processing 4 sections for middle_docs item 62
+2025-11-05 01:51:31,844 INFO Created 269 documents for collection: middle_docs
+2025-11-05 01:51:31,846 INFO Use pytorch device_name: cpu
+2025-11-05 01:51:31,846 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 01:51:38,504 INFO Adding 269 documents to PGVector collection: middle_docs
+2025-11-05 01:51:39,743 INFO Successfully loaded 269 documents into PGVector collection: middle_docs
+2025-11-05 01:51:39,743 INFO Successfully loaded JSON data into pgvector for collection: middle_docs
+2025-11-05 01:52:14,560 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:52:15,254 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:52:16,170 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:52:16,887 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 01:52:17,648 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:22:58,572 INFO Use pytorch device_name: mps
+2025-11-05 10:22:58,572 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 10:23:17,285 INFO Use pytorch device_name: mps
+2025-11-05 10:23:17,286 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 10:23:32,458 INFO Use pytorch device_name: mps
+2025-11-05 10:23:32,459 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 10:24:09,335 INFO Loading JSON data into pgvector for collection: middle_docs
+2025-11-05 10:24:09,336 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 10:24:09,337 INFO Loading JSON data from: data/middle.json
+2025-11-05 10:24:09,339 INFO Processing 62 items for middle_docs
+2025-11-05 10:24:09,339 INFO Processing 5 sections for middle_docs item 1
+2025-11-05 10:24:09,340 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 10:24:09,340 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 10:24:09,340 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 10:24:09,340 INFO Processing 12 sections for middle_docs item 5
+2025-11-05 10:24:09,340 INFO Processing 12 sections for middle_docs item 6
+2025-11-05 10:24:09,340 INFO Processing 6 sections for middle_docs item 7
+2025-11-05 10:24:09,340 INFO Processing 4 sections for middle_docs item 9
+2025-11-05 10:24:09,340 INFO Processing 8 sections for middle_docs item 10
+2025-11-05 10:24:09,341 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 10:24:09,341 INFO Processing 9 sections for middle_docs item 12
+2025-11-05 10:24:09,341 INFO Processing 2 sections for middle_docs item 13
+2025-11-05 10:24:09,341 INFO Processing 7 sections for middle_docs item 14
+2025-11-05 10:24:09,341 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 10:24:09,341 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 10:24:09,341 INFO Processing 2 sections for middle_docs item 17
+2025-11-05 10:24:09,341 INFO Processing 3 sections for middle_docs item 18
+2025-11-05 10:24:09,341 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 10:24:09,342 INFO Processing 3 sections for middle_docs item 20
+2025-11-05 10:24:09,342 INFO Processing 2 sections for middle_docs item 21
+2025-11-05 10:24:09,342 INFO Processing 4 sections for middle_docs item 22
+2025-11-05 10:24:09,342 INFO Processing 4 sections for middle_docs item 23
+2025-11-05 10:24:09,342 INFO Processing 7 sections for middle_docs item 24
+2025-11-05 10:24:09,342 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 10:24:09,342 INFO Processing 2 sections for middle_docs item 26
+2025-11-05 10:24:09,342 INFO Processing 5 sections for middle_docs item 27
+2025-11-05 10:24:09,342 INFO Processing 6 sections for middle_docs item 28
+2025-11-05 10:24:09,343 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 10:24:09,343 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 10:24:09,343 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 10:24:09,343 INFO Processing 3 sections for middle_docs item 32
+2025-11-05 10:24:09,343 INFO Processing 3 sections for middle_docs item 33
+2025-11-05 10:24:09,343 INFO Processing 4 sections for middle_docs item 34
+2025-11-05 10:24:09,343 INFO Processing 1 sections for middle_docs item 35
+2025-11-05 10:24:09,343 INFO Processing 6 sections for middle_docs item 36
+2025-11-05 10:24:09,343 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 10:24:09,343 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 10:24:09,343 INFO Processing 3 sections for middle_docs item 39
+2025-11-05 10:24:09,344 INFO Processing 1 sections for middle_docs item 40
+2025-11-05 10:24:09,344 INFO Processing 3 sections for middle_docs item 41
+2025-11-05 10:24:09,344 INFO Processing 3 sections for middle_docs item 42
+2025-11-05 10:24:09,344 INFO Processing 8 sections for middle_docs item 43
+2025-11-05 10:24:09,344 INFO Processing 2 sections for middle_docs item 44
+2025-11-05 10:24:09,344 INFO Processing 6 sections for middle_docs item 45
+2025-11-05 10:24:09,344 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 10:24:09,344 INFO Processing 2 sections for middle_docs item 47
+2025-11-05 10:24:09,344 INFO Processing 9 sections for middle_docs item 48
+2025-11-05 10:24:09,344 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 10:24:09,344 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 10:24:09,344 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 10:24:09,344 INFO Processing 2 sections for middle_docs item 52
+2025-11-05 10:24:09,345 INFO Processing 9 sections for middle_docs item 53
+2025-11-05 10:24:09,345 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 10:24:09,345 INFO Processing 6 sections for middle_docs item 55
+2025-11-05 10:24:09,345 INFO Processing 4 sections for middle_docs item 56
+2025-11-05 10:24:09,345 INFO Processing 3 sections for middle_docs item 57
+2025-11-05 10:24:09,345 INFO Processing 4 sections for middle_docs item 58
+2025-11-05 10:24:09,345 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 10:24:09,345 INFO Processing 6 sections for middle_docs item 60
+2025-11-05 10:24:09,345 INFO Processing 3 sections for middle_docs item 61
+2025-11-05 10:24:09,345 INFO Processing 4 sections for middle_docs item 62
+2025-11-05 10:24:09,345 INFO Created 269 documents for collection: middle_docs
+2025-11-05 10:24:09,348 INFO Use pytorch device_name: mps
+2025-11-05 10:24:09,348 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 10:24:16,364 INFO Adding 269 documents to PGVector collection: middle_docs
+2025-11-05 10:24:16,981 INFO Successfully loaded 269 documents into PGVector collection: middle_docs
+2025-11-05 10:24:16,981 INFO Successfully loaded JSON data into pgvector for collection: middle_docs
+2025-11-05 10:24:40,670 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:24:41,442 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:24:42,129 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:24:42,633 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:24:43,509 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 10:47:38,774 INFO Use pytorch device_name: mps
+2025-11-05 10:47:38,774 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 10:48:10,113 INFO Starting upload of file: middle.docx
+2025-11-05 10:48:10,114 INFO Saving file to: data/middle.docx
+2025-11-05 10:48:10,115 INFO File saved successfully, size: 67848 bytes
+2025-11-05 10:48:10,115 INFO Starting middle.py processing script
+2025-11-05 11:02:53,890 INFO middle.py completed successfully
+2025-11-05 11:02:53,890 INFO JSON file created, proceeding with vectorstore reload
+2025-11-05 11:02:53,890 INFO middle.py completed successfully
+2025-11-05 11:02:53,890 INFO Reloading vectorstore for middle_docs
+2025-11-05 11:02:53,890 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 11:02:53,890 INFO Loading JSON data from: data/middle.json
+2025-11-05 11:02:53,892 INFO Processing 62 items for middle_docs
+2025-11-05 11:02:53,892 INFO Processing 2 sections for middle_docs item 1
+2025-11-05 11:02:53,892 INFO Processing 2 sections for middle_docs item 2
+2025-11-05 11:02:53,892 INFO Processing 4 sections for middle_docs item 3
+2025-11-05 11:02:53,892 INFO Processing 3 sections for middle_docs item 4
+2025-11-05 11:02:53,892 INFO Processing 5 sections for middle_docs item 5
+2025-11-05 11:02:53,892 INFO Processing 9 sections for middle_docs item 6
+2025-11-05 11:02:53,892 INFO Processing 8 sections for middle_docs item 7
+2025-11-05 11:02:53,892 INFO Processing 2 sections for middle_docs item 8
+2025-11-05 11:02:53,892 INFO Processing 5 sections for middle_docs item 9
+2025-11-05 11:02:53,892 INFO Processing 8 sections for middle_docs item 10
+2025-11-05 11:02:53,892 INFO Processing 3 sections for middle_docs item 11
+2025-11-05 11:02:53,892 INFO Processing 7 sections for middle_docs item 12
+2025-11-05 11:02:53,892 INFO Processing 1 sections for middle_docs item 13
+2025-11-05 11:02:53,892 INFO Processing 3 sections for middle_docs item 14
+2025-11-05 11:02:53,892 INFO Processing 7 sections for middle_docs item 15
+2025-11-05 11:02:53,892 INFO Processing 7 sections for middle_docs item 16
+2025-11-05 11:02:53,892 INFO Processing 1 sections for middle_docs item 17
+2025-11-05 11:02:53,892 INFO Processing 5 sections for middle_docs item 18
+2025-11-05 11:02:53,892 INFO Processing 4 sections for middle_docs item 19
+2025-11-05 11:02:53,892 INFO Processing 2 sections for middle_docs item 20
+2025-11-05 11:02:53,892 INFO Processing 1 sections for middle_docs item 21
+2025-11-05 11:02:53,892 INFO Processing 3 sections for middle_docs item 22
+2025-11-05 11:02:53,892 INFO Processing 1 sections for middle_docs item 23
+2025-11-05 11:02:53,892 INFO Processing 7 sections for middle_docs item 24
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 25
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 26
+2025-11-05 11:02:53,893 INFO Processing 4 sections for middle_docs item 27
+2025-11-05 11:02:53,893 INFO Processing 6 sections for middle_docs item 28
+2025-11-05 11:02:53,893 INFO Processing 8 sections for middle_docs item 29
+2025-11-05 11:02:53,893 INFO Processing 6 sections for middle_docs item 30
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 31
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 32
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 33
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 34
+2025-11-05 11:02:53,893 INFO Processing 5 sections for middle_docs item 35
+2025-11-05 11:02:53,893 INFO Processing 10 sections for middle_docs item 36
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 37
+2025-11-05 11:02:53,893 INFO Processing 3 sections for middle_docs item 38
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 39
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 40
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 41
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 42
+2025-11-05 11:02:53,893 INFO Processing 7 sections for middle_docs item 43
+2025-11-05 11:02:53,893 INFO Processing 3 sections for middle_docs item 44
+2025-11-05 11:02:53,893 INFO Processing 3 sections for middle_docs item 45
+2025-11-05 11:02:53,893 INFO Processing 4 sections for middle_docs item 46
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 47
+2025-11-05 11:02:53,893 INFO Processing 10 sections for middle_docs item 48
+2025-11-05 11:02:53,893 INFO Processing 7 sections for middle_docs item 49
+2025-11-05 11:02:53,893 INFO Processing 2 sections for middle_docs item 50
+2025-11-05 11:02:53,893 INFO Processing 0 sections for middle_docs item 51
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 52
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 53
+2025-11-05 11:02:53,893 INFO Processing 0 sections for middle_docs item 54
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 55
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 56
+2025-11-05 11:02:53,893 INFO Processing 1 sections for middle_docs item 57
+2025-11-05 11:02:53,894 INFO Processing 4 sections for middle_docs item 58
+2025-11-05 11:02:53,894 INFO Processing 6 sections for middle_docs item 59
+2025-11-05 11:02:53,894 INFO Processing 11 sections for middle_docs item 60
+2025-11-05 11:02:53,894 INFO Processing 2 sections for middle_docs item 61
+2025-11-05 11:02:53,894 INFO Processing 2 sections for middle_docs item 62
+2025-11-05 11:02:53,894 INFO Created 287 documents for collection: middle_docs
+2025-11-05 11:02:53,895 INFO Use pytorch device_name: mps
+2025-11-05 11:02:53,895 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 11:03:02,122 INFO Adding 287 documents to PGVector collection: middle_docs
+2025-11-05 11:03:02,800 INFO Successfully loaded 287 documents into PGVector collection: middle_docs
+2025-11-05 11:03:02,800 INFO Vectorstore reload completed successfully
+2025-11-05 11:03:02,800 INFO Upload and processing completed successfully
+2025-11-05 11:03:47,146 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:03:48,216 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:03:48,836 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:03:49,607 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:03:50,643 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:14:05,939 INFO Use pytorch device_name: mps
+2025-11-05 11:14:05,940 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 11:16:25,316 INFO Starting upload of file: middle.docx
+2025-11-05 11:16:25,317 INFO Saving file to: data/middle.docx
+2025-11-05 11:16:25,317 INFO File saved successfully, size: 67848 bytes
+2025-11-05 11:16:25,317 INFO Starting middle.py processing script
+2025-11-05 11:17:13,092 ERROR middle.py failed with return code: -2
+2025-11-05 11:17:13,092 ERROR Upload failed with error: middle.py failed with return code: -2
+2025-11-05 11:24:33,447 INFO Use pytorch device_name: mps
+2025-11-05 11:24:33,448 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 11:26:30,395 INFO Starting upload of file: middle.docx
+2025-11-05 11:26:30,396 INFO Saving file to: data/middle.docx
+2025-11-05 11:26:30,396 INFO File saved successfully, size: 67848 bytes
+2025-11-05 11:26:30,396 INFO Starting middle.py processing script
+2025-11-05 11:38:13,385 INFO middle.py completed successfully
+2025-11-05 11:38:13,385 INFO JSON file created, proceeding with vectorstore reload
+2025-11-05 11:38:13,385 INFO middle.py completed successfully
+2025-11-05 11:38:13,385 INFO Reloading vectorstore for middle_docs
+2025-11-05 11:38:13,385 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 11:38:13,385 INFO Loading JSON data from: data/middle.json
+2025-11-05 11:38:13,386 INFO Processing 62 items for middle_docs with simplified structure
+2025-11-05 11:38:13,386 INFO Created 62 documents for collection: middle_docs
+2025-11-05 11:38:13,387 INFO Use pytorch device_name: mps
+2025-11-05 11:38:13,387 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 11:38:21,489 INFO Adding 62 documents to PGVector collection: middle_docs
+2025-11-05 11:38:21,839 INFO Successfully loaded 62 documents into PGVector collection: middle_docs
+2025-11-05 11:38:21,840 INFO Vectorstore reload completed successfully
+2025-11-05 11:38:21,840 INFO Upload and processing completed successfully
+2025-11-05 11:40:19,025 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:40:19,798 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:40:20,347 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:40:21,238 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:40:21,959 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:41:06,824 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:41:08,269 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:41:09,061 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:41:09,799 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 11:41:10,868 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 12:01:59,882 INFO Use pytorch device_name: mps
+2025-11-05 12:01:59,882 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 12:02:56,547 INFO Starting upload of file: middle.docx
+2025-11-05 12:02:56,547 INFO Saving file to: data/middle.docx
+2025-11-05 12:02:56,548 INFO File saved successfully, size: 67848 bytes
+2025-11-05 12:02:56,548 INFO Starting middle.py processing script
+2025-11-05 12:16:36,574 INFO middle.py completed successfully
+2025-11-05 12:16:36,575 INFO JSON file created, proceeding with vectorstore reload
+2025-11-05 12:16:36,575 INFO middle.py completed successfully
+2025-11-05 12:16:36,575 INFO Reloading vectorstore for middle_docs
+2025-11-05 12:16:36,575 INFO Starting to reload vectorstore for collection: middle_docs
+2025-11-05 12:16:36,575 INFO Loading JSON data from: data/middle.json
+2025-11-05 12:16:36,576 INFO Processing 62 items for middle_docs with structured array format
+2025-11-05 12:16:36,576 INFO Created 389 documents for collection: middle_docs
+2025-11-05 12:16:36,577 INFO Use pytorch device_name: mps
+2025-11-05 12:16:36,577 INFO Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2025-11-05 12:16:46,662 INFO Adding 389 documents to PGVector collection: middle_docs
+2025-11-05 12:16:47,554 INFO Successfully loaded 389 documents into PGVector collection: middle_docs
+2025-11-05 12:16:47,554 INFO Vectorstore reload completed successfully
+2025-11-05 12:16:47,554 INFO Upload and processing completed successfully
+2025-11-05 12:22:57,850 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 12:22:58,734 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 12:22:59,319 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 12:23:00,180 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-05 12:23:00,912 INFO HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"

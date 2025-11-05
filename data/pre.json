@@ -1,0 +1,128 @@
+{
+  "questions": [
+    {
+      "question": "健康体检自测问卷",
+      "type": "text",
+      "options": null
+    },
+    {
+      "question": "B1近一年内，您觉得您的健康状况怎么样?",
+      "type": "multiple_choice",
+      "options": [
+        "很好",
+        "好",
+        "一般",
+        "不好",
+        "很不好"
+      ]
+    },
+    {
+      "question": "B2本人手术史：",
+      "type": "multiple_choice",
+      "options": [
+        "无",
+        "有"
+      ]
+    },
+    {
+      "question": "输血史：",
+      "type": "multiple_choice",
+      "options": [
+        "无",
+        "有"
+      ]
+    },
+    {
+      "question": "药物过敏史：",
+      "type": "text",
+      "options": null
+    },
+    {
+      "question": "B3本人疾病史：",
+      "type": "multiple_choice",
+      "options": [
+        "无",
+        "有"
+      ]
+    },
+    {
+      "question": "C5您的饮食习惯?",
+      "type": "multiple_choice",
+      "options": [
+        "荤素均衡",
+        "荤食为主",
+        "素食为主；"
+      ]
+    },
+    {
+      "question": "且口味偏于：",
+      "type": "multiple_choice",
+      "options": [
+        "多盐",
+        "多油",
+        "多糖",
+        "辛辣",
+        "清淡"
+      ]
+    },
+    {
+      "question": "C6您每天的夜间睡眠时长",
+      "type": "text",
+      "options": null
+    },
+    {
+      "question": "午睡",
+      "type": "text",
+      "options": null
+    },
+    {
+      "question": "睡眠质量：",
+      "type": "multiple_choice",
+      "options": [
+        "较好",
+        "一般",
+        "较差"
+      ]
+    },
+    {
+      "question": "D1最近7天内，您有几天做了剧烈的体力活动，像提重物、挖掘、有氧活动、快速 骑车等?",
+      "type": "multiple_choice",
+      "options": [
+        "无相关体力活动",
+        "1~2次/周",
+        "3~5次/周",
+        "&gt;5次/周"
+      ]
+    },
+    {
+      "question": "D2最近7天内，您有几天做了适度的体力活动，像提轻的物品、以平常的速度骑车",
+      "type": "text",
+      "options": null
+    },
+    {
+      "question": "双人网球运动等?但不包括走路。",
+      "type": "multiple_choice",
+      "options": [
+        "无相关体力活动",
+        "1~2次/周",
+        "3~5次/周",
+        "&gt;5次/周"
+      ]
+    },
+    {
+      "question": "D3最近7天内，您有几天步行，且每一次至少10分钟?",
+      "type": "multiple_choice",
+      "options": [
+        "没有步行",
+        "1~2次/周",
+        "3~5次/周",
+        "&gt;5次/周"
+      ]
+    },
+    {
+      "question": "D4最近7天内，工作日您有多久是坐着的?",
+      "type": "text",
+      "options": null
+    }
+  ]
+}

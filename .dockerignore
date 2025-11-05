@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+# uv.lock (should NOT be ignored, needed for dependency locking)
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+api.log
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+
+# Documentation
+*.md
+!README.md
+
+# Data (will be mounted as volume)
+data/
+
+# Lock files (uv.lock is needed)
+# uv.lock

@@ -1,0 +1,9 @@
+{
+    "python": {
+        "pythonPath": "/Users/michael/code/python/agno/.venv/bin/python3",
+        "venvPath": "/Users/michael/code/python/agno/.venv",
+        "venv": ".venv"
+    },
+    "include": ["."],
+    "exclude": ["__pycache__", ".venv"]
+}
