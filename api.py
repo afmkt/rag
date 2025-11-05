@@ -53,28 +53,48 @@ def initialize_rag():
     if vectorstores:
         return  # Already initialized
 
-    # Database connection
-    connection_string = os.getenv(
-        "DATABASE_URL",
-        "postgresql+psycopg://myuser:mypassword@localhost:5432/mydatabase"
-    )
-
-    # Embeddings model (multilingual for Chinese and English support)
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
-
-    # Create PGVector stores for each collection
-    collections = ["pre_docs", "middle_docs", "post_docs"]
-    for collection in collections:
-        vectorstores[collection] = PGVector(
-            embeddings=embeddings,
-            connection=connection_string,
-            collection_name=collection
+    try:
+        # Database connection
+        connection_string = os.getenv(
+            "DATABASE_URL",
+            "postgresql+psycopg://myuser:mypassword@localhost:5432/mydatabase"
         )
+        logging.info(f"Using database connection: {connection_string}")
 
-    # LLM
-    openrouter_api_key = os.getenv("OPEN_ROUTER_API_KEY")
-    openrouter_model = os.getenv("OPEN_ROUTER_MODEL", "openrouter/openchat-3.5-0106")
-    llm = OpenRouterLLM(api_key=openrouter_api_key, model=openrouter_model)
+        # Embeddings model (multilingual for Chinese and English support)
+        logging.info("Loading HuggingFace embeddings model...")
+        embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+        logging.info("Embeddings model loaded successfully")
+
+        # Create PGVector stores for each collection
+        collections = ["pre_docs", "middle_docs", "post_docs"]
+        for collection in collections:
+            logging.info(f"Initializing vectorstore for collection: {collection}")
+            vectorstores[collection] = PGVector(
+                embeddings=embeddings,
+                connection=connection_string,
+                collection_name=collection
+            )
+            logging.info(f"Vectorstore for {collection} initialized successfully")
+
+        # LLM
+        openrouter_api_key = os.getenv("OPEN_ROUTER_API_KEY")
+        if not openrouter_api_key:
+            raise ValueError("OPEN_ROUTER_API_KEY environment variable is required")
+        
+        openrouter_model = os.getenv("OPEN_ROUTER_MODEL", "openai/gpt-oss-safeguard-20b")
+        logging.info(f"Initializing LLM with model: {openrouter_model}")
+        llm = OpenRouterLLM(api_key=openrouter_api_key, model=openrouter_model)
+        logging.info("LLM initialized successfully")
+
+        logging.info("RAG system initialization completed successfully")
+        
+    except Exception as e:
+        logging.error(f"Failed to initialize RAG system: {str(e)}")
+        # Reset partially initialized components
+        vectorstores = {}
+        llm = None
+        raise  # Re-raise the exception
 
 def reload_vectorstore(collection: str):
     """Reload a specific vectorstore with updated data."""
@@ -219,18 +239,85 @@ def reload_vectorstore(collection: str):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup
+    logging.info("Starting RAG API server...")
     try:
         initialize_rag()
+        logging.info("RAG system initialized successfully during startup")
     except Exception as e:
-        print(f"Failed to initialize RAG: {e}")
+        logging.error(f"Failed to initialize RAG during startup: {e}")
+        logging.error("Server will start but RAG functionality will be unavailable")
+        logging.error("Use /initialize endpoint to retry initialization")
     yield
     # Shutdown
-    pass
+    logging.info("Shutting down RAG API server...")
 
 app = FastAPI(title="RAG Query API", description="API for querying medical RAG system and uploading documents", lifespan=lifespan)
 
 class QueryRequest(BaseModel):
     question: str
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint to verify system status."""
+    try:
+        # Check environment variables
+        db_url = os.getenv("DATABASE_URL")
+        openrouter_key = os.getenv("OPEN_ROUTER_API_KEY")
+        
+        status = {
+            "status": "healthy",
+            "vectorstores_initialized": bool(vectorstores),
+            "llm_initialized": bool(llm),
+            "database_url_set": bool(db_url),
+            "openrouter_key_set": bool(openrouter_key),
+            "vectorstore_collections": list(vectorstores.keys()) if vectorstores else []
+        }
+        
+        # Test database connection if vectorstores exist
+        if vectorstores:
+            try:
+                # Try a simple operation on the first vectorstore
+                first_collection = list(vectorstores.values())[0]
+                # This will test the database connection
+                first_collection.similarity_search("test", k=1)
+                status["database_connection"] = "ok"
+            except Exception as db_error:
+                status["database_connection"] = f"error: {str(db_error)}"
+                status["status"] = "degraded"
+        else:
+            status["database_connection"] = "not_tested"
+            status["status"] = "error"
+            
+        return status
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": str(e),
+            "vectorstores_initialized": bool(vectorstores),
+            "llm_initialized": bool(llm)
+        }
+
+@app.post("/initialize")
+async def force_initialize():
+    """Force re-initialization of the RAG system."""
+    global vectorstores, llm
+    try:
+        vectorstores = {}  # Reset
+        llm = None
+        initialize_rag()
+        return {
+            "status": "success",
+            "message": "RAG system re-initialized",
+            "vectorstores": list(vectorstores.keys()),
+            "llm_initialized": bool(llm)
+        }
+    except Exception as e:
+        return {
+            "status": "error", 
+            "error": str(e),
+            "vectorstores_initialized": bool(vectorstores),
+            "llm_initialized": bool(llm)
+        }
 
 def query_rag(question: str, collection: str) -> str:
     """Query the RAG system with a question for a specific collection."""
